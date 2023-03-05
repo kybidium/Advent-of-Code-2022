@@ -1,3 +1,7 @@
+"""
+Resources Consulted: None
+"""
+# Code Works
 f = open("input2.txt")
 f_read = f.read().strip()
 
@@ -68,6 +72,7 @@ def rock_paper_scissors_calc_2(strat):
 
     return score
     # is there any way to generalize this dictionary creation/use previous?
+    
 print(rock_paper_scissors_calculator(f_read))
 print(rock_paper_scissors_calc_2(f_read))
 f.close()

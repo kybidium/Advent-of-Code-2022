@@ -3,8 +3,8 @@ Resources Consulted:
     https://www.freecodecamp.org/news/python-list-remove-how-to-remove-an-item-
         from-a-list-in-python/#:~:text=The%20remove()%20method%20is,not%20by%20
         its%20index%20number.
-
 """
+# Code Works
 
 f = open("input1.txt")
 f_read = f.read()
@@ -63,3 +63,4 @@ def greatest_num(group_str, n):
 
 print(greatest_sum(f_read))
 print(greatest_num(f_read, 3))
+f.close()
