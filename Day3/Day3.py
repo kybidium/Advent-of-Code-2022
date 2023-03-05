@@ -3,6 +3,8 @@ Resources Consulted:
     https://stackoverflow.com/questions/63915659/create-dictionary-with-alphabet
         -characters-mapping-to-numbers
 """
+#Code Works
+
 f = open("input3.txt")
 f_read = f.read()
 
