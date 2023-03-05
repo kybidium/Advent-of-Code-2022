@@ -35,4 +35,5 @@ def rock_paper_scissors_calculator(strat):
 
     return score
 
+print(rock_paper_scissors_calculator(f_read))
 f.close()
