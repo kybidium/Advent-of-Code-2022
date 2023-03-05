@@ -1,6 +1,5 @@
 f = open("input2.txt")
-f_read = f.read()
-
+f_read = f.read().strip()
 def rock_paper_scissors_calculator(strat):
     dict_A = {
         "X": 3,
@@ -28,7 +27,9 @@ def rock_paper_scissors_calculator(strat):
 
     # format is letterspaceletterspacenewline
     score = 0
+    print(strat.split("\n")[0])
     for round in strat.split("\n"):
+        print(round)
         # is there a better way to process the file?
         gain = int(dict_gen[round[0]][round[2]]) + int(dict_gen[round[2]])
         score += gain
