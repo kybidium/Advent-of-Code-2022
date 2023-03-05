@@ -36,7 +36,6 @@ def sum_type_priority(l_string):
     l_lst = l_string.split("\n")
     for n in range(0, len(l_lst), 3):
         lst_smol = l_lst[n:n+3]
-        print(lst_smol)
         for let in alpha_str:
             tally = 0
             for s_let in lst_smol:
@@ -44,9 +43,6 @@ def sum_type_priority(l_string):
                     tally += 1
             if tally == 3:
                 prio_tot += alpha_dict[let]
-                print(let)
-                print(alpha_dict[let])
-                print(prio_tot)
                 broken = True
                 tally = 0
                 break
