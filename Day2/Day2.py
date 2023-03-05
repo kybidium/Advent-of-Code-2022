@@ -3,27 +3,27 @@ f_read = f.read()
 
 def rock_paper_scissors_calculator(strat):
     dict_A = {
-        "X": 3
-        "Y": 0
-        "Z": 6
+        "X": 3,
+        "Y": 0,
+        "Z": 6,
     }
     dict_B = {
-        "X": 0
-        "Y": 3
-        "Z": 6
+        "X": 0,
+        "Y": 3,
+        "Z": 6,
     }
     dict_C = {
-        "X": 6
-        "Y": 0
-        "Z": 3
+        "X": 6,
+        "Y": 0,
+        "Z": 3,
     }
     dict_gen  = {
-        "A": dict_A
-        "B": dict_B
-        "C": dict_C
-        "X": 1
-        "Y": 2
-        "Z": 3
+        "A": dict_A,
+        "B": dict_B,
+        "C": dict_C,
+        "X": 1,
+        "Y": 2,
+        "Z": 3,
     }
 
     # format is letterspaceletterspacenewline
