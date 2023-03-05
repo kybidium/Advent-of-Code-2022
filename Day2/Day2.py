@@ -21,11 +21,18 @@ def rock_paper_scissors_calculator(strat):
         "A": dict_A
         "B": dict_B
         "C": dict_C
+        "X": 1
+        "Y": 2
+        "Z": 3
     }
 
     # format is letterspaceletterspacenewline
+    score = 0
     for round in strat.split("\n"):
         # is there a better way to process the file?
-        
+        gain = int(dict_gen[round[0]][round[2]]) + int(dict_gen[round[2]])
+        score += gain
+
+    return score
 
 f.close()
