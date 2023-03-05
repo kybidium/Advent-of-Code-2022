@@ -35,6 +35,7 @@ def rock_paper_scissors_calculator(strat):
     return score
 
 def rock_paper_scissors_calc_2(strat):
+    # updated dictionaries with part 2 rules
     dict_A = {
         "X": 3,
         "Y": 1,
