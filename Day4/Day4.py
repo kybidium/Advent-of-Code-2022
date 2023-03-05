@@ -9,6 +9,9 @@ def fully_contained(ID_lst):
         second1, second2 = second.split("-")
         range1 = list(range(int(first1), int(first2) + 1))
         range2 = list(range(int(second1), int(second2) + 1))
+        for n in range((min(len(range1), len(range2)))):
+            if not range2[n] in range1 or range1[n] in range2:
+                break
         if range1 in range2 or range2 in range1:
             print(range1 in range2, range2 in range1)
             tally += 1
