@@ -10,6 +10,7 @@ def fully_contained(ID_lst):
         range1 = list(range(int(first1), int(first2) + 1))
         range2 = list(range(int(second1), int(second2) + 1))
         if range1 in range2 or range2 in range1:
+            print(range1 in range2, range2 in range1)
             tally += 1
     return tally
 
