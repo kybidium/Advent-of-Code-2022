@@ -13,10 +13,16 @@ def sum_priority(l_string):
     for idx, let in enumerate(alpha_str):
         alpha_dict[let] = idx + 1
 
+    prio_tot = 0
     l_lst = l_string.split("\n")
     for l_str in l_lst:
-        first, second = l_str[:len(l_str)/2], l_str[len(l_str)/2:]
-
+        first, second = l_str[:(len(l_str)//2)], l_str[(len(l_str)//2):]
+        for s_let in first:
+            if s_let in second:
+                prio_tot += alpha_dict[s_let]
+                break
+    
+    return prio_tot       
 
 print(sum_priority(f_read))
-f_close()
+f.close()
