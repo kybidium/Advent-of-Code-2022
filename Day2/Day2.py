@@ -3,8 +3,8 @@ f_read = f.read().strip()
 def rock_paper_scissors_calculator(strat):
     dict_A = {
         "X": 3,
-        "Y": 0,
-        "Z": 6,
+        "Y": 6,
+        "Z": 0,
     }
     dict_B = {
         "X": 0,
@@ -24,12 +24,9 @@ def rock_paper_scissors_calculator(strat):
         "Y": 2,
         "Z": 3,
     }
-
     # format is letterspaceletterspacenewline
     score = 0
-    print(strat.split("\n")[0])
     for round in strat.split("\n"):
-        print(round)
         # is there a better way to process the file?
         gain = int(dict_gen[round[0]][round[2]]) + int(dict_gen[round[2]])
         score += gain
