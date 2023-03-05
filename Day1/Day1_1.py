@@ -42,6 +42,9 @@ def greatest_num(group_str, n):
         n greatest sums of any group of numbers in the string (int)
     """
     # maybe decompose into helper function for producing list
+    """add to github readme information about how files are structured
+    (both solns called in the Day1 file, functions written in same file
+    as generic functions)"""
     cal_lst = []
     cal_tal = 0
     for num in group_str.split("\n"):
