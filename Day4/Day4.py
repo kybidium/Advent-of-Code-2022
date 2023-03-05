@@ -3,7 +3,7 @@ f_read = f.read()
 
 def fully_contained(ID_lst):
     tally = 0
-    for line in fully_contained.split("\n"):
+    for line in ID_lst.strip().split("\n"):
         first, second = line.split(",")
         first1, first2 = first.split("-")
         second1, second2 = second.split("-")
