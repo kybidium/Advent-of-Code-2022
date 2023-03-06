@@ -25,17 +25,18 @@ def process_stacks(stack_string, n1, n2):
         # iterating through the relevant characters in each row
         for n in range(1, len(stack_lst[0]), 4):
             # if the 
-            if lst[n] == " " and not f"list{(n+2)//3}" in dict_stacks:
-                dict_stacks[f"list{(n+2)//3}"] = []
-            elif not lst[n] == " " and not f"list{(n+2)//3}" in dict_stacks:
-                dict_stacks[f"list{(n+2)//3}"] = [lst[n]]
+            print(n, (n+2)//3)
+            if lst[n] == " " and not f"list{(n+3)//4}" in dict_stacks:
+                dict_stacks[f"list{(n+3)//4}"] = []
+            elif not lst[n] == " " and not f"list{(n+3)//4}" in dict_stacks:
+                dict_stacks[f"list{(n+3)//4}"] = [lst[n]]
             elif not lst[n] == " ":
-                dict_stacks[f"list{(n+2)//3}"].insert(0, lst[n])
+                dict_stacks[f"list{(n+3)//4}"].insert(0, lst[n])
     print(dict_stacks)
     tru_com_lst = []
     for com in command_lst:
         com_split = com.split(" ")
-        com_nums = [num for num in com_split[1::2]]
+        com_nums = [int(num) for num in com_split[1::2]]
         tru_com_lst.append(com_nums)
     print(tru_com_lst)
     
@@ -54,3 +55,13 @@ def process_stacks(stack_string, n1, n2):
 
 process_stacks(f_read, 9, 9)
 f.close()
+"""
+-3, 3
+1, 1
+5, 2
+9, 3
+13, 4
+y*3 + (y - 3) = n
+4y -3 = n
+(n + 3)/4 = y
+"""
