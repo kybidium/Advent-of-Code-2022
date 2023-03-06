@@ -5,6 +5,7 @@ Resources Consulted:
     https://favtutor.com/blogs/set-intersection-python#:~:text=Difference%20betw
         een%20set%20intersection(),structure%20to%20find%20the%20intersection.
 """
+# Part 1
 f = open("input4.txt")
 f_read = f.read()
 
