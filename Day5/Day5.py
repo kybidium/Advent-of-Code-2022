@@ -48,8 +48,10 @@ def process_stacks(stack_string, n1, n2):
         del stack1[len(stack1) - coms[0] - 1:]
 
     str_stacks_fin = ""
-    for stack in dict_stacks.get_values():
-        str_stacks_fin += stack[-1]
+    for stack in dict_stacks.values():
+        if stack:
+            str_stacks_fin += stack[-1]
+        print(str_stacks_fin)
 
     return str_stacks_fin
 
