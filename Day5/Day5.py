@@ -26,9 +26,9 @@ def process_stacks(stack_string, n1, n2):
         for n in range(1, len(stack_lst[0]), 4):
             # if the 
             if lst[n] == " " and not f"list{(n+2)//3}" in dict_stacks:
-                dict_stacks[f"list{(n+2)//3}"] = [lst[n]]
-            elif not lst[n] == " " and not f"list{(n+2)//3}" in dict_stacks:
                 dict_stacks[f"list{(n+2)//3}"] = []
+            elif not lst[n] == " " and not f"list{(n+2)//3}" in dict_stacks:
+                dict_stacks[f"list{(n+2)//3}"] = [lst[n]]
             elif not lst[n] == " ":
                 dict_stacks[f"list{(n+2)//3}"].insert(0, lst[n])
     print(dict_stacks)
