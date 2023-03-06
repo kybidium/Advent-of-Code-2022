@@ -3,7 +3,7 @@ Resources Consulted:
     https://www.tutorialspoint.com/what-is-a-negative-indexing-in-python#:~:text
         =Negative%20Indexing%20is%20used%20to,i.e.%20start%2C%20stop%20and%20step.
 """
-# need to generalize for automatically using n2 stacks of height n1 (unknown ns)
+# need to generalize for automatically using n2 stacks of height n1 (unknown n's)
 f = open("input5.txt")
 f_read = f.read()
 
@@ -14,21 +14,30 @@ def process_stacks(stack_string, n1, n2):
         n2: number of stacks
     """
     stack_string_list = stack_string.strip().split("\n")
+    # create a list of the rows of stack items
     stack_lst = stack_string_list[:n1 - 1]
-    command_lst = stack_string_list[n1:]
+    # create a list of the rows of commands
+    command_lst = stack_string_list[n1 + 1:]
     dict_stacks = {}
+    
+    # iterating through the list of rows of stack items
     for lst in stack_lst:
-        for n in range(0, len(stack_lst[0]), 3):
-            if lst[n:n+3] and not f"list{(n)//3}" in dict_stacks:
-                dict_stacks[f"list{(n)//3}"] = [lst[n:n+3]]
-            elif lst[n:n+3]:
-                dict_stacks[f"list{(n)//3}"].insert(0, str(lst[n:n+3]))
+        # iterating through the relevant characters in each row
+        for n in range(1, len(stack_lst[0]), 4):
+            # if the 
+            if lst[n] == " " and not f"list{(n+2)//3}" in dict_stacks:
+                dict_stacks[f"list{(n+2)//3}"] = [lst[n]]
+            elif not lst[n] == " " and not f"list{(n+2)//3}" in dict_stacks:
+                dict_stacks[f"list{(n+2)//3}"] = []
+            elif not lst[n] == " ":
+                dict_stacks[f"list{(n+2)//3}"].insert(0, lst[n])
     print(dict_stacks)
     tru_com_lst = []
     for com in command_lst:
         com_split = com.split(" ")
         com_nums = [num for num in com_split[1::2]]
         tru_com_lst.append(com_nums)
+    print(tru_com_lst)
     
     for coms in tru_com_lst:
         stack1 = dict_stacks[f"list{coms[1]}"]
