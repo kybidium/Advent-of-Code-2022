@@ -42,6 +42,7 @@ def process_stacks(stack_string, n1, n2):
         stack1 = dict_stacks[f"list{coms[1]}"]
         stack2 = dict_stacks[f"list{coms[2]}"]
         if coms[0] != len(stack1):
+            # need to fix indexing
             stack2.extend(stack1[-1:len(stack1) - coms[0] - 1:-1])
             print(coms[0],stack1, stack2, stack1[-1:len(stack1) - coms[0] - 1:-1])
             del stack1[-1:len(stack1) - coms[0] - 1:-1]
