@@ -2,6 +2,7 @@
 Resources Consulted: None
 """
 # Code Works
+
 f = open("input2.txt")
 f_read = f.read().strip()
 
@@ -12,9 +13,10 @@ def rock_paper_scissors_calculator(strat):
     the player choice of rock, paper, and scissors and A, B, and C represent the
     opponent's choice of rock, paper, and scissors respectively.
 
-    Arg: strat: the stategy formatted in the above rows (string)
-    Returns:
-        score: the player's total score (int)
+    Arg:
+        strat: the stategy formatted in the above rows (string)
+
+    Returns: score: the player's total score (int)
     """
     # generates a nested dictionary containing the rock paper scissors strategies
     dict_A = {
@@ -58,9 +60,10 @@ def rock_paper_scissors_calc_2(strat):
     whether the player chooses to win, lose, or draw and A, B, and C represent the
     opponent's choice of rock, paper, and scissors respectively.
 
-    Arg: strat: the stategy formatted in the above rows (string)
-    Returns:
-        score: the player's total score (int)
+    Arg:
+        strat: the stategy formatted in the above rows (string)
+
+    Returns: score: the player's total score (int)
     """
     # generates a nested dictionary containing the part 2 strategies
     dict_A = {
@@ -96,7 +99,8 @@ def rock_paper_scissors_calc_2(strat):
         score += gain
 
     return score
-    
+
+# prints result of each function with the input given
 print(rock_paper_scissors_calculator(f_read))
 print(rock_paper_scissors_calc_2(f_read))
 f.close()
