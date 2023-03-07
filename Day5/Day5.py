@@ -25,37 +25,37 @@ def process_stacks(stack_string, n1, n2):
         # iterating through the relevant characters in each row
         for n in range(1, len(stack_lst[0]), 4):
             # if the 
-            print(n, (n+2)//3)
             if lst[n] == " " and not f"list{(n+3)//4}" in dict_stacks:
                 dict_stacks[f"list{(n+3)//4}"] = []
             elif not lst[n] == " " and not f"list{(n+3)//4}" in dict_stacks:
                 dict_stacks[f"list{(n+3)//4}"] = [lst[n]]
             elif not lst[n] == " ":
                 dict_stacks[f"list{(n+3)//4}"].insert(0, lst[n])
-    print(dict_stacks)
     tru_com_lst = []
     for com in command_lst:
         com_split = com.split(" ")
         com_nums = [int(num) for num in com_split[1::2]]
         tru_com_lst.append(com_nums)
-    print(tru_com_lst)
     
     for coms in tru_com_lst:
         stack1 = dict_stacks[f"list{coms[1]}"]
         stack2 = dict_stacks[f"list{coms[2]}"]
-
-        stack2.extend(stack1[len(stack1) - coms[0] - 1:])
-        del stack1[len(stack1) - coms[0] - 1:]
+        if coms[0] != len(stack1):
+            stack2.extend(stack1[-1:len(stack1) - coms[0] - 1:-1])
+            print(coms[0],stack1, stack2, stack1[-1:len(stack1) - coms[0] - 1:-1])
+            del stack1[-1:len(stack1) - coms[0] - 1:-1]
+        else:
+            stack2.extend(stack1[::-1])
+            del stack1[::-1]
 
     str_stacks_fin = ""
-    for stack in dict_stacks.values():
-        if stack:
-            str_stacks_fin += stack[-1]
-        print(str_stacks_fin)
+    for n in range(0, n2):
+        if dict_stacks[f"list{n+1}"]:
+            str_stacks_fin += dict_stacks[f"list{n+1}"][-1]
 
     return str_stacks_fin
 
-process_stacks(f_read, 9, 9)
+print(process_stacks(f_read, 9, 9))
 f.close()
 """
 -3, 3
