@@ -6,6 +6,17 @@ f = open("input2.txt")
 f_read = f.read().strip()
 
 def rock_paper_scissors_calculator(strat):
+    """
+    Determines a rock paper scissors player's score based on a strategy outlined
+    with rows "<opponent choice> <player choice>" where X, Y, and Z represent
+    the player choice of rock, paper, and scissors and A, B, and C represent the
+    opponent's choice of rock, paper, and scissors respectively.
+
+    Arg: strat: the stategy formatted in the above rows (string)
+    Returns:
+        score: the player's total score (int)
+    """
+    # generates a nested dictionary containing the rock paper scissors strategies
     dict_A = {
         "X": 3,
         "Y": 6,
@@ -31,15 +42,27 @@ def rock_paper_scissors_calculator(strat):
     }
 
     score = 0
+    # iterates through each round's strategy
     for round in strat.split("\n"):
-        # is there a better way to process the file?
+        # adds the choice score and the win score
         gain = int(dict_gen[round[0]][round[2]]) + int(dict_gen[round[2]])
+        # adds the result to the total score
         score += gain
 
     return score
 
 def rock_paper_scissors_calc_2(strat):
-    # updated dictionaries with part 2 rules
+    """
+    Determines a rock paper scissors player's score based on a strategy outlined
+    with rows "<opponent choice> <player choice>" where X, Y, and Z represent
+    whether the player chooses to win, lose, or draw and A, B, and C represent the
+    opponent's choice of rock, paper, and scissors respectively.
+
+    Arg: strat: the stategy formatted in the above rows (string)
+    Returns:
+        score: the player's total score (int)
+    """
+    # generates a nested dictionary containing the part 2 strategies
     dict_A = {
         "X": 3,
         "Y": 1,
@@ -65,13 +88,14 @@ def rock_paper_scissors_calc_2(strat):
     }
 
     score = 0
+    # iterates through each round's strategy
     for round in strat.split("\n"):
-        # is there a better way to process the file?
+        # adds the win score and the choice score
         gain = int(dict_gen[round[0]][round[2]]) + int(dict_gen[round[2]])
+        # adds the result to the total score
         score += gain
 
     return score
-    # is there any way to generalize this dictionary creation/use previous?
     
 print(rock_paper_scissors_calculator(f_read))
 print(rock_paper_scissors_calc_2(f_read))
