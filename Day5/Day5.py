@@ -3,6 +3,7 @@ Resources Consulted:
     https://www.tutorialspoint.com/what-is-a-negative-indexing-in-python#:~:text
         =Negative%20Indexing%20is%20used%20to,i.e.%20start%2C%20stop%20and%20step.
 """
+# Passes Part 1
 # need to generalize for automatically using n2 stacks of height n1 (unknown n's)
 f = open("input5.txt")
 f_read = f.read()
